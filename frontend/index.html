@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equipment Rental DApp</title>
+  
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Ethers.js library -->
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.6.2/dist/ethers.umd.min.js"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">RentX</div>
+    <div class="header-buttons">
+      <button onclick="switchAccount()" class="secondary-btn">Switch Account</button>
+      <button onclick="connectWallet()" id="connectBtn">Connect Wallet</button>
+    </div>
+  </header>
+
+  <!-- Wallet Info -->
+  <div class="wallet-info" id="walletInfo" style="display:none;">
+    <strong>Current Account:</strong> <span id="walletAddress"></span><br>
+    <strong>Balance:</strong> <span id="walletBalance"></span> ETH
+  </div>
+
+  <!-- Instructions -->
+  <div class="instructions">
+    <h3>User Instructions:</h3>
+    <ol>
+      <li><strong>Account 1 (Owner):</strong> Connect MetaMask Account 1 → Add equipment items</li>
+      <li><strong>Account 2 (Renter):</strong> Click "Switch Account" → Connect MetaMask Account 2 → You'll see <strong>RENT</strong> buttons</li>
+      <li><strong>Rent an item:</strong> Click "Rent" button → Pay ETH → Item moves to "Rented" section</li>
+      <li><strong>Return item:</strong> While still as Account 2 → Click "Return" button → Item returns to "Available"</li>
+    </ol>
+    <p><strong>Note:</strong> Make sure you have multiple accounts in MetaMask with some test ETH!</p>
+  </div>
+
+  <!-- Status Messages -->
+  <div id="status"></div>
+
+  <!-- Add Equipment Section -->
+  <div class="add-box">
+    <h2>Add Equipment</h2>
+    <input id="name" placeholder="Equipment Name">
+    <input id="price" placeholder="Price per Day (ETH)" type="number" step="0.001">
+    <input id="desc" placeholder="Description"><br>
+    <button onclick="addEquipment()">Add Equipment</button>
+  </div>
+
+  <!-- Available Equipment -->
+  <h2 class="section-title">Available Equipment</h2>
+  <div class="grid" id="availableList"></div>
+
+  <!-- Rented Equipment -->
+  <h2 class="section-title">Rented Equipment</h2>
+  <div class="grid" id="rentedList"></div>
+
+  <!-- Link to external JavaScript -->
+  <script src="script.js"></script>
+
+    <!--  Footer -->
+  <footer class="simple-footer">
+    <p>&copy; 2026 RentX - Decentralized Equipment Rental | Built on Ethereum</p>
+  </footer>
+</body>
+
+</html>

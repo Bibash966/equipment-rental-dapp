@@ -1,0 +1,369 @@
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: #fafafa;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo { 
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800; 
+  font-size: 28px;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+.header-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  background: rgb(78, 117, 154);
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+  background: #e62e4d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.secondary-btn {
+  background: #6c757d;
+}
+
+.secondary-btn:hover:not(:disabled) {
+  background: #5a6268;
+}
+
+.wallet-info {
+  text-align: center;
+  padding: 15px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  margin: 20px 30px;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.wallet-info strong {
+  margin-right: 10px;
+}
+
+.instructions {
+  background: linear-gradient(135deg, #e7f3ff 0%, #f0f9ff 100%);
+  border-left: 5px solid #007bff;
+  padding: 20px;
+  margin: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.instructions h3 {
+  margin-top: 0;
+  color: #007bff;
+  font-size: 18px;
+}
+
+.instructions ol {
+  margin: 10px 0;
+  padding-left: 20px;
+  line-height: 1.6;
+}
+
+.instructions li {
+  margin: 8px 0;
+}
+
+.instructions p {
+  margin-top: 15px;
+  color: #666;
+  font-style: italic;
+}
+
+#status {
+  text-align: center;
+  padding: 15px;
+  margin: 15px 30px;
+  border-radius: 8px;
+  font-weight: bold;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.success { 
+  background: #d4edda; 
+  color: #155724; 
+  border: 1px solid #c3e6cb;
+}
+
+.error { 
+  background: #f8d7da; 
+  color: #721c24; 
+  border: 1px solid #f5c6cb;
+}
+
+.info { 
+  background: #d1ecf1; 
+  color: #0c5460; 
+  border: 1px solid #bee5eb;
+}
+
+.add-box {
+  margin: 30px auto;
+  width: 80%;
+  max-width: 900px;
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.add-box h2 {
+  margin-top: 0;
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+input {
+  padding: 12px 15px;
+  margin: 10px;
+  width: 220px;
+  border-radius: 10px;
+  border: 2px solid #e0e0e0;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #ff385c;
+}
+
+.section-title {
+  padding-left: 30px;
+  margin-top: 40px;
+  color: #333;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  padding: 30px;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  padding: 25px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  border-color: #ff385c;
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #333;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+.price { 
+  font-weight: bold; 
+  color: #ff385c;
+  font-size: 20px;
+  margin: 15px 0;
+}
+
+.available { 
+  color: #28a745; 
+  font-weight: bold; 
+  font-size: 16px;
+}
+
+.rented { 
+  color: #dc3545; 
+  font-weight: bold; 
+  font-size: 16px;
+}
+
+.owner-info {
+  color: #666;
+  font-size: 12px;
+  word-break: break-all;
+  margin: 15px 0;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  line-height: 1.6;
+}
+
+.owner-info strong {
+  color: #333;
+}
+
+.badge {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 13px;
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+.badge-owner {
+  background: #e9ecef;
+  color: #6c757d;
+}
+
+.badge-rented {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.rent-btn {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.rent-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #0056b3 0%, #004494 100%);
+}
+
+.return-btn {
+  background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.return-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #1e7e34 0%, #155724 100%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .header-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .header-buttons button {
+    width: 100%;
+  }
+  
+  .add-box {
+    width: 95%;
+    padding: 25px;
+  }
+  
+  input {
+    width: 100%;
+    margin: 5px 0;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+  
+  .instructions {
+    margin: 15px;
+    padding: 15px;
+  }
+  
+  .wallet-info {
+    margin: 15px;
+    font-size: 14px;
+  }
+}
+
+/* Loading Animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.loading {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+/*  Footer */
+.simple-footer {
+  background-color: #f8f9fa;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+  color: #666;
+  font-size: 14px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.simple-footer p {
+  margin: 0;
+}
